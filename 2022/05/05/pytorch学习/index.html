@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>pytorch学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、pytorch简介pytorch是一个能在cpu和gpu上运行并解决各类深度学习问题的深度框架，可以将其看做是支持GPU计算和自动微分计算的Numpy库。2017年1月 开源。2018年获得图灵奖。 pytorch具有自动求导的动态图功能，即define by run，即当python解释器运行到相应的行时才创建计算图。 优点：易于使用的API，支持python，非常类似于Numpy。 支持分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pytorch学习">
+<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/05/pytorch%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、pytorch简介pytorch是一个能在cpu和gpu上运行并解决各类深度学习问题的深度框架，可以将其看做是支持GPU计算和自动微分计算的Numpy库。2017年1月 开源。2018年获得图灵奖。 pytorch具有自动求导的动态图功能，即define by run，即当python解释器运行到相应的行时才创建计算图。 优点：易于使用的API，支持python，非常类似于Numpy。 支持分">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/pytorch%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMjYzNDc3,size_16,color_FFFFFF,t_70.png">
+<meta property="article:published_time" content="2022-05-05T13:47:20.000Z">
+<meta property="article:modified_time" content="2022-05-26T12:05:14.602Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangguoxie.gitee.io/pytorch%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMjYzNDc3,size_16,color_FFFFFF,t_70.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pytorch学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/05/pytorch%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2022-05-05T13:47:20.000Z" itemprop="datePublished">2022-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pytorch学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、pytorch简介"><a href="#1、pytorch简介" class="headerlink" title="1、pytorch简介"></a>1、pytorch简介</h1><p>pytorch是一个能在cpu和gpu上运行并解决各类深度学习问题的深度框架，可以将其看做是支持GPU计算和自动微分计算的Numpy库。2017年1月 开源。2018年获得图灵奖。</p>
+<p>pytorch具有自动求导的动态图功能，即define by run，即当python解释器运行到相应的行时才创建计算图。</p>
+<p>优点：易于使用的API，支持python，非常类似于Numpy。</p>
+<p>支持分布式训练，强大的生态系统</p>
+<h2 id="1-1-pytorch安装"><a href="#1-1-pytorch安装" class="headerlink" title="1.1 pytorch安装"></a>1.1 pytorch安装</h2><p>pytorch1.9.0  2021.6发布</p>
+<p>支持win7及以上，ubantu13.04，macOs 10.01及以上</p>
+<p>3.5-3.9 64bit的python版本</p>
+<h3 id="1-1-1-Win-平台："><a href="#1-1-1-Win-平台：" class="headerlink" title="1.1.1 Win 平台："></a>1.1.1 Win 平台：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cpuonly -c pytorch</span><br></pre></td></tr></table></figure>
+
+<p>没有-c pytorch 则走国内的镜像</p>
+<h3 id="1-1-2GPU平台："><a href="#1-1-2GPU平台：" class="headerlink" title="1.1.2GPU平台："></a>1.1.2GPU平台：</h3><p>cuda是一种NVIDIA推出的通用并行计算框架，该框架使GPU能够解决复杂的计算问题。为了使用CUDA，需要安装cudatoolkit，可以和pytorch一并使用conda安装。</p>
+<p>显示当前的显卡信息nivdia-smi</p>
+<p>cuda Version：驱动支持的cuda最高版本，并不是装的cuda的版本</p>
+<p>官网地址：<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+<p>不是30系的显卡，选择cuda 10.2即可，使用下面命令安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=<span class="number">10.2</span> -c pytorch</span><br></pre></td></tr></table></figure>
+
+<p>30系的显卡，比如：3060，3070，3080 必须安装cuda11.1以上</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=<span class="number">11.1</span> -c pytorch -c conda-forge</span><br></pre></td></tr></table></figure>
+
+<p>测试安装好的torch</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line">torch.__version__</span><br><span class="line">torch.cuda.is_available()</span><br></pre></td></tr></table></figure>
+
+<h1 id="2、pytorch基础"><a href="#2、pytorch基础" class="headerlink" title="2、pytorch基础"></a>2、pytorch基础</h1><h2 id="2-1-机器学习的基础"><a href="#2-1-机器学习的基础" class="headerlink" title="2.1 机器学习的基础"></a>2.1 机器学习的基础</h2><p>1、创建模型</p>
+<p>2、输入一张带标签的图片</p>
+<p>3、使用模型对此图片做出预测</p>
+<p>4、将预测结果与实际标签比较，产生的差距为损失</p>
+<p>5、以减小损失为优化目标，根据损失优化模型参数</p>
+<h2 id="2-2-基础模型创建流程"><a href="#2-2-基础模型创建流程" class="headerlink" title="2.2 基础模型创建流程"></a>2.2 基础模型创建流程</h2><p>1、输入数据处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data = pd.read_csv(<span class="string">&#x27;xxx.csv&#x27;</span>)</span><br><span class="line">data.head()<span class="comment">#查看头信息</span></span><br><span class="line">data.info()<span class="comment">#查看数据集</span></span><br><span class="line">X= data.Education.values <span class="comment">#ndarray数值，Education为列名字</span></span><br><span class="line">X = X.reshape(-<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line"><span class="comment">#转换为tensor数值,tensor是torch最基本的数据结构</span></span><br><span class="line">torch.from_numpy(X).<span class="built_in">type</span>(torch.FloatTensor) <span class="comment">#转换为float的tensor。</span></span><br></pre></td></tr></table></figure>
+
+<p>2、创建模型</p>
+<p>模型必须继承自 nn.Module</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn<span class="comment">#层和损失函数均在该模型中</span></span><br><span class="line">calss EIModel(nn.Module):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">super</span>(EIModel,self).__init__()</span><br><span class="line">		self.linear = nn.Linear(in_features=<span class="number">1</span>,out_features=<span class="number">1</span>)<span class="comment">#输入的特征长度</span></span><br><span class="line">	<span class="comment">#方法的使用,如何使用定义的方法和层,前向传播</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,inputs</span>):</span><br><span class="line">		logits = self.linear(inputs)</span><br><span class="line">		<span class="keyword">return</span> logits</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<p><code>in_features</code>指的是输入的二维张量的大小，即输入的<code>[batch_size, size]</code>中的size</p>
+<p>out_features 指的是输出的二维张量的大小，即输出的二维张量的形状为<code>[batch_size，output_size]</code>，当然，它也代表了该全连接层的神经元个数。</p>
+<p>从输入输出的张量的shape角度来理解，相当于一个输入为<code>[batch_size, in_features]</code>的张量变换成了<code>[batch_size, out_features]</code>的输出张量</p>
+<p>3、初始化模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">model = EIModel()<span class="comment">#初始化模型</span></span><br><span class="line">loss_fn = nn.MSELoss() <span class="comment">#定义损失函数</span></span><br><span class="line">opt = torch.optim.SGD(model.parameters()，lr = <span class="number">0.001</span>)<span class="comment">#定义优化函数</span></span><br></pre></td></tr></table></figure>
+
+<p>model.parameters()为可训练的参数，也即优化的参数，训练目标项</p>
+<p>4、训练</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5000</span>):</span><br><span class="line">	<span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y):</span><br><span class="line">		y_pred = model(x)<span class="comment">#forward的方法</span></span><br><span class="line">		loss = loss_fn(y_pred,y)</span><br><span class="line">		opt.zero_grad()<span class="comment">#清空以前的梯度</span></span><br><span class="line">		loss.backward()<span class="comment">#反向传播</span></span><br><span class="line">		opt.step()<span class="comment">#沿着损失最快的方法下降</span></span><br></pre></td></tr></table></figure>
+
+<p>5、预测、评价</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(model.parameters())<span class="comment">#输出参数</span></span><br><span class="line"><span class="built_in">list</span>(model.named_parameters())<span class="comment">#输出带名字的参数</span></span><br><span class="line">model.linear.weight,model.linear.bias</span><br></pre></td></tr></table></figure>
+
+<h1 id="3、Tensor-张量"><a href="#3、Tensor-张量" class="headerlink" title="3、Tensor(张量)"></a>3、Tensor(张量)</h1><p>Pytorch最基本的操作对象是Tensor(张量)，它表示一个多维矩阵，张量类似于Numpy的ndarrays，张量可以在GPU上使用以加速计算。</p>
+<p>Tensor(张量)和 Scalar 标量；Vector 向量；Matrix 矩阵 一个等级</p>
+<p>张量是基于向量和矩阵的推广，我们可以将标量视为零阶张量，向量视为一阶张量，矩阵就是二阶张量。张量支持高效科学计算的数组，它可以是一个数（标量）、一维数组(向量)、二维数组(矩阵)和更高维的数组(高阶数据)</p>
+<h2 id="3-1-初始化张量"><a href="#3-1-初始化张量" class="headerlink" title="3.1 初始化张量"></a>3.1 初始化张量</h2><h3 id="3-1-1-从列表创建张量"><a href="#3-1-1-从列表创建张量" class="headerlink" title="3.1.1 从列表创建张量"></a>3.1.1 从列表创建张量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t = torch.tensor([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="comment">#从列表创建张量</span></span><br><span class="line">t.dtype  <span class="comment">#tensor的属性，输出数据类型</span></span><br><span class="line"></span><br><span class="line">t = torch.FloatTensor([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="comment">#创建float类型的tensor,torch.float32</span></span><br><span class="line">t = torch.LongTensor([<span class="number">1</span>,<span class="number">2</span>])<span class="comment">#torch.int64</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-1-2-从ndarray创建"><a href="#3-1-2-从ndarray创建" class="headerlink" title="3.1.2 从ndarray创建"></a>3.1.2 从ndarray创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np_array = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">np_array.dtype</span><br><span class="line">t = torch.from_numpy(np_array)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-1-3-Tensor的最基本数据类型"><a href="#3-1-3-Tensor的最基本数据类型" class="headerlink" title="3.1.3 Tensor的最基本数据类型"></a>3.1.3 Tensor的最基本数据类型</h3><ul>
+<li>32位浮点型：torch.float32&#x2F;torch.float (数据经常用这个类型)</li>
+<li>64位浮点型：torch.float64</li>
+<li>64位整型：torch.int64&#x2F;torch.long (标签经常用这个类型)</li>
+<li>16位整型：torch.int16</li>
+<li>32位整型：torch.int32</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = torch.tensor([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=torch.<span class="built_in">float</span>)</span><br><span class="line"><span class="comment">#等价于</span></span><br><span class="line">t = torch.tensor([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=torch.float32)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-张量的随机值"><a href="#3-2-张量的随机值" class="headerlink" title="3.2 张量的随机值"></a>3.2 张量的随机值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">torch.rand(<span class="number">2</span>,<span class="number">3</span>)<span class="comment">#产生2行3列，0-1的数值</span></span><br><span class="line">t = torch.randn(<span class="number">2</span>,<span class="number">3</span>)<span class="comment">#标准正态分布的值，非0~1</span></span><br><span class="line">t.shape<span class="comment">#查看形状，torch.Size([2,3])</span></span><br><span class="line"></span><br><span class="line">torch.zeros(<span class="number">3</span>,<span class="number">4</span>)<span class="comment">#全0</span></span><br><span class="line">torch.ones(<span class="number">3</span>,<span class="number">2</span>)<span class="comment">#全1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建形状、类型和原本tensor一样的tensor</span></span><br><span class="line">x = torch.zeros_like(t) <span class="comment">#全0</span></span><br><span class="line">x = torch.rand_like(t)	<span class="comment">#随机数</span></span><br><span class="line">t.size()</span><br><span class="line">t.size(<span class="number">0</span>)				<span class="comment">#0维的大小</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-tensor数据移动到显存"><a href="#3-3-tensor数据移动到显存" class="headerlink" title="3.3 tensor数据移动到显存"></a>3.3 tensor数据移动到显存</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t.device						<span class="comment">#device(type=&#x27;cpu&#x27;)</span></span><br><span class="line"><span class="keyword">if</span> torch.cuda.is_available():	  <span class="comment">#转换到cuda上面</span></span><br><span class="line">	t = t.to(<span class="string">&#x27;cuda&#x27;</span>)</span><br><span class="line">t.device						<span class="comment">#device(type=&#x27;cuda&#x27;,index=0)</span></span><br><span class="line">t = t.to(<span class="string">&#x27;cpu&#x27;</span>)					<span class="comment">#显存移动到内存</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-4-数据类型的转换"><a href="#3-4-数据类型的转换" class="headerlink" title="3.4 数据类型的转换"></a>3.4 数据类型的转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一 不推荐使用</span></span><br><span class="line">t.dtype<span class="comment">#torch.float32</span></span><br><span class="line">t = t.<span class="built_in">type</span>(torch.float16)<span class="comment">#数据类型转换</span></span><br><span class="line">t = t.<span class="built_in">type</span>(torch.int16)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方式二 推荐使用</span></span><br><span class="line">t = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">t.long()  <span class="comment">#等价于t.type(torch.int64)</span></span><br><span class="line">t.<span class="built_in">float</span>()	<span class="comment">#等价于t.type(torch.float32)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-张量的运算及转换"><a href="#3-5-张量的运算及转换" class="headerlink" title="3.5 张量的运算及转换"></a>3.5 张量的运算及转换</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#广播模式</span></span><br><span class="line">t + <span class="number">3</span><span class="comment">#每个元素均加3</span></span><br><span class="line">t + t1	<span class="comment">#相同结构，对应元素相加</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t.add(t1)<span class="comment">#等价于t+t1，不改变原来的值</span></span><br><span class="line">t.add_(t1)<span class="comment">#覆盖掉t值，就地改变原值</span></span><br></pre></td></tr></table></figure>
+
+<p>#其他常用函数,顶级方法<br>abs,mean,cumsum(累加和),multiply,divide(除法)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch.<span class="built_in">abs</span>(t)<span class="comment">#相当于t.abs()</span></span><br><span class="line">torch.mean(t) <span class="comment">#相当于t.mean()</span></span><br></pre></td></tr></table></figure>
+
+<p>矩阵乘法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># matmul 矩阵乘法</span></span><br><span class="line">t.T <span class="comment">#转置</span></span><br><span class="line">t.matmul(t.T)<span class="comment">#俩个矩阵乘法</span></span><br><span class="line"><span class="comment">#简写</span></span><br><span class="line">t@(t.T)  <span class="comment">#相当于t.matmul(t.T)</span></span><br></pre></td></tr></table></figure>
+
+<p>item() 方法</p>
+<p>tensor转化为python的数据类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#维度为0的tensor数据转换为python的数据类型</span></span><br><span class="line">result = t.<span class="built_in">sum</span>().item()</span><br></pre></td></tr></table></figure>
+
+<p>numpy和tensor的转换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#numpy转换为tensor</span></span><br><span class="line">t1 = torch.from_numpy(np.random.randn(<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="comment">#tensor转换为numpy</span></span><br><span class="line">t1.numpy()</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-6-张量变形"><a href="#3-6-张量变形" class="headerlink" title="3.6  张量变形"></a>3.6  张量变形</h2><h3 id="3-6-1-t-view"><a href="#3-6-1-t-view" class="headerlink" title="3.6.1 t.view()"></a>3.6.1 t.view()</h3><p>#相当于np.reshape的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t.shape</span><br><span class="line">t1 = t.view(3,8)</span><br><span class="line">t1.shape</span><br><span class="line">t.view(-1,1)#-1表示自动计算，24*1的形状</span><br><span class="line">t = torch.randn(12,3,4,4)</span><br><span class="line">#四维数据变成二维</span><br><span class="line">t2 = t.view(12,3*4*4)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-2-torch-squeeze"><a href="#3-6-2-torch-squeeze" class="headerlink" title="3.6.2  torch.squeeze"></a>3.6.2  torch.squeeze</h3><p>减少为1的维度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t1 = t1.view(1,12,48)</span><br><span class="line">t2 = torch.squeeze(t1)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-3-torch-unsqueeze"><a href="#3-6-3-torch-unsqueeze" class="headerlink" title="3.6.3 torch.unsqueeze"></a>3.6.3 torch.unsqueeze</h3><p>增加维度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#两种方式实现增加维度</span></span><br><span class="line">input_y = torch.unsqueeze(input_y,<span class="number">2</span>)</span><br><span class="line">input_y = input_y.unsqueeze(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-7-自动微分"><a href="#3-7-自动微分" class="headerlink" title="3.7 自动微分"></a>3.7 自动微分</h2><p>t.requires_grad是否需要框架跟随计算，true表示需要跟随</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">t = torch.ones(<span class="number">2</span>,<span class="number">2</span>,requires_grad=<span class="literal">True</span>)</span><br><span class="line">y = t+<span class="number">5</span><span class="comment"># y有一个grad_fn属性，返回计算得到此张量的方法</span></span><br><span class="line">y.requires_grad  <span class="comment">#True,会继承t</span></span><br><span class="line"></span><br><span class="line">z = y*<span class="number">2</span></span><br><span class="line">out = z.mean() <span class="comment">#标量值</span></span><br><span class="line"><span class="comment">#标量值可以调用自动微分运算</span></span><br><span class="line">out.backward()</span><br><span class="line">t.grad  <span class="comment">#打印t的梯度，d(out)/d(t)</span></span><br><span class="line"><span class="comment">#grad属性记录得到的梯度</span></span><br><span class="line"><span class="comment"># t没有gran_fn</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#不计算梯度，方法一</span></span><br><span class="line"><span class="keyword">with</span> tirch.no.grad():</span><br><span class="line">    y = t=<span class="number">2</span></span><br><span class="line">    <span class="built_in">print</span>(y.requires_grad)</span><br><span class="line"><span class="comment"># 方式二</span></span><br><span class="line">t.requires_grad(<span class="literal">False</span>)<span class="comment">#就地改变属性，#不再优化参数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#截断梯度运算，方法三</span></span><br><span class="line">result = out.detach()<span class="comment">#detach之后的运算，不再跟踪运算</span></span><br></pre></td></tr></table></figure>
+
+<p>Tensor :属性 data；grad；grad_fn</p>
+<h1 id="4、nn-和nn-functional的区别"><a href="#4、nn-和nn-functional的区别" class="headerlink" title="4、nn 和nn.functional的区别"></a>4、nn 和nn.functional的区别</h1><h2 id="4-1-相同点"><a href="#4-1-相同点" class="headerlink" title="4.1 相同点"></a>4.1 相同点</h2><ul>
+<li><code>nn.Xxx</code>和<code>nn.functional.xxx</code>的实际功能是相同的，即<code>nn.Conv2d</code>和<code>nn.functional.conv2d</code> 都是进行卷积，<code>nn.Dropout</code> 和<code>nn.functional.dropout</code>都是进行dropout 等； </li>
+<li>运行效率也是近乎相同。</li>
+</ul>
+<p><code>nn.functional.xxx</code>是函数接口，而<code>nn.Xxx</code>是<code>nn.functional.xxx</code>的类封装，并且**<code>nn.Xxx</code>都继承于一个共同祖先<code>nn.Module</code>。**这一点导致<code>nn.Xxx</code>除了具有<code>nn.functional.xxx</code>功能之外，内部附带了<code>nn.Module</code>相关的属性和方法，例如<code>train(), eval(),load_state_dict, state_dict </code>等。</p>
+<h2 id="4-2-差别点"><a href="#4-2-差别点" class="headerlink" title="4.2 差别点"></a>4.2 差别点</h2><ul>
+<li><strong>两者的调用方式不同。</strong></li>
+</ul>
+<p>1）是否需要实例化</p>
+<p><code>nn.Xxx</code> 需要先实例化并传入参数，然后以函数调用的方式调用实例化的对象并传入输入数据</p>
+<p><code>nn.functional.xxx</code>同时传入输入数据和weight, bias等其他参数</p>
+<p>2）使用</p>
+<p><strong><code>nn.Xxx</code>继承于<code>nn.Module</code>， 能够很好的与<code>nn.Sequential</code>结合使用， 而<code>nn.functional.xxx</code>无法与<code>nn.Sequential</code>结合使用。</strong></p>
+<p><strong><code>nn.Xxx</code>不需要你自己定义和管理weight；而<code>nn.functional.xxx</code>需要你自己定义weight，每次调用的时候都需要手动传入weight, 不利于代码复用。</strong></p>
+<p>3）PyTorch官方推荐</p>
+<p>具有学习参数的（例如，conv2d, linear, batch_norm)采用<code>nn.Xxx</code>方式，没有学习参数的（例如，maxpool, loss func, activation func）等推荐使用<code>nn.functional.xxx</code>或者<code>nn.Xxx</code>方式。</p>
+<p>但关于dropout，个人强烈推荐使用<code>nn.Xxx</code>方式，因为一般情况下只有训练阶段才进行dropout，在eval阶段都不会进行dropout。使用<code>nn.Xxx</code>方式定义dropout，在调用<code>model.eval()</code>之后，model中所有的dropout layer都关闭，但以<code>nn.function.dropout</code>方式定义dropout，在调用<code>model.eval()</code>之后并不能关闭dropout。</p>
+<p>最后，总结如下：</p>
+<p>这个问题依赖于你要解决的问题复杂度和个人风格喜好。在<code>nn.Xxx</code>不能满足你的功能需求时，<code>nn.functional.xxx</code>是更佳的选择，因为<code>nn.functional.xxx</code>更加的灵活(更加接近底层），你可以在其基础上定义出自己想要的功能。 个人偏向于在能使用<code>nn.Xxx</code>情况下尽量使用，不行再换<code>nn.functional.xxx</code> ，感觉这样更能显示出网络的层次关系，也更加的纯粹（所有layer和model本身都是Module，一种和谐统一的感觉）。</p>
+<h1 id="5、卷积的尺寸"><a href="#5、卷积的尺寸" class="headerlink" title="5、卷积的尺寸"></a>5、卷积的尺寸</h1><p>输入的尺寸需要为(数据量* 维度 * 数据长度)</p>
+<p>self.conv1d &#x3D; nn.Conv1d(in_channels&#x3D;1, out_channels&#x3D;16, kernel_size&#x3D;1, stride&#x3D;1, padding&#x3D;5, dilation&#x3D;1);</p>
+<p>中间数字为 维度</p>
+<h1 id="6、数据集"><a href="#6、数据集" class="headerlink" title="6、数据集"></a>6、数据集</h1><h2 id="6-1、加载内置数据集"><a href="#6-1、加载内置数据集" class="headerlink" title="6.1、加载内置数据集"></a>6.1、加载内置数据集</h2><p>torchvision库，提供了常用的数据集，模型和转换函数等。</p>
+<p>pytorch提供了两个类</p>
+<p>torch.utils.data.Dataset 类</p>
+<p>torch.utils.data.DataLoader 类</p>
+<p>pytorch内置图片数据集均在torchvision.datasets模块下，包含Caltrech，CelebA，CIFAR，Cityscapes、COCO、Fashion-MNIST、ImageNet、MINIST等很多著名的数据集。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvison</span><br><span class="line"><span class="keyword">from</span> torchvison.transforms <span class="keyword">import</span> ToTensor</span><br><span class="line">train_ds = torchvision.datasets.MINIST(<span class="string">&#x27;./&#x27;</span>,					<span class="comment">#路径</span></span><br><span class="line">                                       train=<span class="literal">True</span>,	 			 <span class="comment">#下载训练数据</span></span><br><span class="line">                          			  trainsform = ToTensor(),	 <span class="comment">#转换为tensor</span></span><br><span class="line">                           			  download=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ToTensor() 作用：</p>
+<ul>
+<li>1、转为Tensor</li>
+<li>2、规范图片格式。常见图片格式：(高，宽，通道)，框架默认处理的格式为(channel,height,weight)</li>
+<li>3、将像素值规范到0-1之间。</li>
+</ul>
+<h2 id="6-2-创建dataLoader"><a href="#6-2-创建dataLoader" class="headerlink" title="6.2 创建dataLoader"></a>6.2 创建dataLoader</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.utils.data.DataLoader <span class="comment">#对dataset进行封装</span></span><br></pre></td></tr></table></figure>
+
+<p>封装主要做三件事情：</p>
+<ul>
+<li>1、乱序 shuffle</li>
+<li>2、数据采样为小批次 batch_size 指定批次的大小</li>
+<li>3、num_workers 多进程读取</li>
+<li>4、clooate_fn 设置批次处理函数,可以自定义</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#训练数据需要shuffle，测试数据不需要乱序</span></span><br><span class="line">train_dl = torch.utils.data.DataLoader(train_ds,batch_size=<span class="number">64</span>,shuffle=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 取出一个批次的数据</span></span><br><span class="line">data,labels = <span class="built_in">next</span>(<span class="built_in">iter</span>(train_dl))</span><br><span class="line">data.shape</span><br><span class="line">(size,channel,height,weight)</span><br></pre></td></tr></table></figure>
+
+<p>绘图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> i , img <span class="keyword">in</span> <span class="built_in">enumerate</span>(imgs[:<span class="number">10</span>]):</span><br><span class="line">    npimg = img.numpy()</span><br><span class="line">    npimg = np.aqueeze(npimg)</span><br><span class="line">    plt.subplot(<span class="number">1</span>,<span class="number">10</span>,i+<span class="number">1</span>)<span class="comment">#从i+1开始编码</span></span><br><span class="line">    plt.imshow(npimg)</span><br><span class="line">    plt.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">labels[:<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="7、保存和加载pytorch模型"><a href="#7、保存和加载pytorch模型" class="headerlink" title="7、保存和加载pytorch模型"></a>7、保存和加载pytorch模型</h1><h2 id="7-1-保存多个模型到一个文件"><a href="#7-1-保存多个模型到一个文件" class="headerlink" title="7.1 保存多个模型到一个文件"></a>7.1 保存多个模型到一个文件</h2><p>模型保存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">torch.save(&#123;</span><br><span class="line">            <span class="string">&#x27;modelA_state_dict&#x27;</span>: modelA.state_dict(),</span><br><span class="line">            <span class="string">&#x27;modelB_state_dict&#x27;</span>: modelB.state_dict(),</span><br><span class="line">            <span class="string">&#x27;optimizerA_state_dict&#x27;</span>: optimizerA.state_dict(),</span><br><span class="line">            <span class="string">&#x27;optimizerB_state_dict&#x27;</span>: optimizerB.state_dict(),</span><br><span class="line">            ...</span><br><span class="line">            &#125;, PATH)</span><br></pre></td></tr></table></figure>
+
+<p>模型加载</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">modelA = TheModelAClass(*args, **kwargs)<span class="comment">#模型结构</span></span><br><span class="line">modelB = TheModelBClass(*args, **kwargs)<span class="comment">#模型结构</span></span><br><span class="line">optimizerA = TheOptimizerAClass(*args, **kwargs)<span class="comment">#模型结构</span></span><br><span class="line">optimizerB = TheOptimizerBClass(*args, **kwargs)<span class="comment">#模型结构</span></span><br><span class="line"> </span><br><span class="line">checkpoint = torch.load(PATH)<span class="comment">#模型保存的路径</span></span><br><span class="line">modelA.load_state_dict(checkpoint[<span class="string">&#x27;modelA_state_dict&#x27;</span>])<span class="comment">#对应的权重</span></span><br><span class="line">modelB.load_state_dict(checkpoint[<span class="string">&#x27;modelB_state_dict&#x27;</span>])</span><br><span class="line">optimizerA.load_state_dict(checkpoint[<span class="string">&#x27;optimizerA_state_dict&#x27;</span>])</span><br><span class="line">optimizerB.load_state_dict(checkpoint[<span class="string">&#x27;optimizerB_state_dict&#x27;</span>])</span><br><span class="line"> </span><br><span class="line">modelA.<span class="built_in">eval</span>()</span><br><span class="line">modelB.<span class="built_in">eval</span>()</span><br><span class="line"><span class="comment"># - 或者 -</span></span><br><span class="line">modelA.train()</span><br><span class="line">modelB.train()</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-2-保存加载用于推理的常规Checkpoint-x2F-或继续训练"><a href="#7-2-保存加载用于推理的常规Checkpoint-x2F-或继续训练" class="headerlink" title="7.2 保存加载用于推理的常规Checkpoint&#x2F;或继续训练"></a>7.2 保存加载用于推理的常规Checkpoint&#x2F;或继续训练</h2><p>模型保存</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">torch.save(&#123;</span><br><span class="line">            &#x27;epoch&#x27;: epoch,</span><br><span class="line">            &#x27;model_state_dict&#x27;: model.state_dict(),</span><br><span class="line">            &#x27;optimizer_state_dict&#x27;: optimizer.state_dict(),</span><br><span class="line">            &#x27;loss&#x27;: loss,</span><br><span class="line">            ...</span><br><span class="line">            &#125;, PATH)</span><br></pre></td></tr></table></figure>
+
+<p>数据加载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = TheModelClass(*args, **kwargs)</span><br><span class="line">optimizer = TheOptimizerClass(*args, **kwargs)</span><br><span class="line"> </span><br><span class="line">checkpoint = torch.load(PATH)</span><br><span class="line">model.load_state_dict(checkpoint[&#x27;model_state_dict&#x27;])</span><br><span class="line">optimizer.load_state_dict(checkpoint[&#x27;optimizer_state_dict&#x27;])</span><br><span class="line">epoch = checkpoint[&#x27;epoch&#x27;]</span><br><span class="line">loss = checkpoint[&#x27;loss&#x27;]</span><br><span class="line"> </span><br><span class="line">model.eval()</span><br><span class="line"># - 或者 -</span><br><span class="line">model.train()</span><br></pre></td></tr></table></figure>
+
+<p>8、激活函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line">nn.LeakyReLU(<span class="built_in">input</span>)</span><br></pre></td></tr></table></figure>
+
+<p>激活函数的特点：线性可导的</p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="1、UnicodeDecodeError"><a href="#1、UnicodeDecodeError" class="headerlink" title="1、UnicodeDecodeError"></a>1、UnicodeDecodeError</h2><p>Python 报错：UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0x80 in position 0: illegal multibyte sequence</p>
+<p>问题分析及解决办法： 序列化操作时，文件模式不正确，改为“rb+”</p>
+<h2 id="2、dir-函数"><a href="#2、dir-函数" class="headerlink" title="2、dir ()函数"></a>2、dir ()函数</h2><p>查看对象内的所有的属性和方法</p>
+<h2 id="3、PyTroch报错NotImplementedError"><a href="#3、PyTroch报错NotImplementedError" class="headerlink" title="3、PyTroch报错NotImplementedError:"></a>3、PyTroch报错NotImplementedError:</h2><p>‘forward’定义处<strong>缩进错误</strong>！</p>
+<h2 id="4、Pytorch全局平均池化"><a href="#4、Pytorch全局平均池化" class="headerlink" title="4、Pytorch全局平均池化"></a>4、Pytorch全局平均池化</h2><p>没有对全局平均（最大）池化单独封装为一层。需要自己实现</p>
+<h2 id="5、Linear"><a href="#5、Linear" class="headerlink" title="5、Linear"></a>5、Linear</h2><p>shape（N, *, H）值得注意的是input的形状和torch的CNN输入形状稍有不同</p>
+<p>CNN的输入形状为 数量*通道数 * 特征长度</p>
+<p>Linear 的输入形状为 数量 * 特征长度 * 通道数</p>
+<p><img src="/pytorch%E5%AD%A6%E4%B9%A0/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMjYzNDc3,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiangguoxie.gitee.io/2022/05/05/pytorch%E5%AD%A6%E4%B9%A0/" data-id="clgq4ca6r000hw4u157dsbvz9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/07/AliyunPython/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AliyunPython
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/05/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">工程笔记</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 20px;">服务器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">深度学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/MP%E7%AE%97%E6%B3%95%E8%A7%A3%E9%87%8A/">MP算法解释</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">异常值检测算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>IAR软件使用方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC] IAR Embedded Workbench IDE 使用方法0、软件安装网盘下载地址：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1edlsIZb4Pne13qAIx_y9dg?pwd&#x3D;dkh8 提取码：dkh8 软件版本：7.80.4 注：内网位置：\192.168.2.58\EcgDoctor_data\开发工具\IAR for ARM 7.8.4.rar 下载后解压该压缩包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IAR软件使用方法">
+<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/19/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] IAR Embedded Workbench IDE 使用方法0、软件安装网盘下载地址：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1edlsIZb4Pne13qAIx_y9dg?pwd&#x3D;dkh8 提取码：dkh8 软件版本：7.80.4 注：内网位置：\192.168.2.58\EcgDoctor_data\开发工具\IAR for ARM 7.8.4.rar 下载后解压该压缩包">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519134005237.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115357728.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115616114.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115812003.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519120206609.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519120313242.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220526192957199.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220729093722628.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519113529754.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519113959652.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519113854258.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115109182.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220526193159867.png">
+<meta property="article:published_time" content="2022-05-19T03:14:51.000Z">
+<meta property="article:modified_time" content="2022-07-29T01:37:25.425Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="硬件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangguoxie.gitee.io/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519134005237.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-IAR软件使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/19/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2022-05-19T03:14:51.000Z" itemprop="datePublished">2022-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IAR软件使用方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="IAR-Embedded-Workbench-IDE-使用方法"><a href="#IAR-Embedded-Workbench-IDE-使用方法" class="headerlink" title="IAR Embedded Workbench IDE 使用方法"></a>IAR Embedded Workbench IDE 使用方法</h1><h2 id="0、软件安装"><a href="#0、软件安装" class="headerlink" title="0、软件安装"></a>0、软件安装</h2><p>网盘下载地址：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1edlsIZb4Pne13qAIx_y9dg?pwd=dkh8">https://pan.baidu.com/s/1edlsIZb4Pne13qAIx_y9dg?pwd=dkh8</a></p>
+<p>提取码：dkh8</p>
+<p>软件版本：7.80.4</p>
+<p>注：内网位置：\192.168.2.58\EcgDoctor_data\开发工具\IAR for ARM 7.8.4.rar</p>
+<p>下载后解压该压缩包，如下图：</p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519134005237.png" alt="image-20220519134005237"></p>
+<p>EWARM-CD-7804-12495.exe 为文件安装包，IARkg_Unis.exe 为激活工具。图片为激活步骤。</p>
+<p>安装破解文字说明步骤如下：</p>
+<p>1).下载IAR软件，然后点击安装，一路NEXT</p>
+<p>2).安装后激活，需要断网</p>
+<p>3).打开IAR软件，在软件目录中点击help&#x2F;License manger</p>
+<p>4).弹出IAR License manager界面，点击license&#x2F;offline activation</p>
+<p>5).出现license wizard界面</p>
+<p>6).打开注册机，将license number 赋值到 license wizard界面的license number</p>
+<p>7).在 license wizard界面点击“下一步”</p>
+<p>8).点击”NO”</p>
+<p>9).接下来会出现save activation information，选择一个地方存储activationinfo.txt文件</p>
+<p>10).点击“下一步”</p>
+<p>11).将第9步生成txt文件加载到注册机activate license中，点击activate license,会弹出另存生成一个activationresponse.txt文件</p>
+<p>12).在第10步界面，use the response file to activate the license,中将第11步产生文件加载进来，点击“下一步”，完成注册</p>
+<p>参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30480583/article/details/96544349">https://blog.csdn.net/weixin_30480583/article/details/96544349</a></p>
+<h2 id="1、新建工作站"><a href="#1、新建工作站" class="headerlink" title="1、新建工作站"></a>1、新建工作站</h2><p>1）新建工作站</p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115357728.png" alt="image-20220519115357728"></p>
+<p>2）、新建工程，Project-&gt; Creat New Project 选择  Externally built executable，在弹出的对话框中命名工程名称，保存到某个地址。</p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115616114.png" alt="image-20220519115616114"></p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115812003.png" alt="image-20220519115812003"></p>
+<p>3）右键，Add -&gt; Add File 添加C&#x2F;C++文件</p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519120206609.png" alt="image-20220519120206609"></p>
+<p>4）添加完成，工作站呈下面样子</p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519120313242.png" alt="image-20220519120313242"></p>
+<h2 id="2、生成静态库文件"><a href="#2、生成静态库文件" class="headerlink" title="2、生成静态库文件"></a>2、生成静态库文件</h2><h3 id="2-1-选择输出library文件"><a href="#2-1-选择输出library文件" class="headerlink" title="2.1 选择输出library文件"></a>2.1 选择输出library文件</h3><p>右键-&gt;Options</p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220526192957199.png" alt="image-20220526192957199"></p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220729093722628.png" alt="image-20220729093722628"></p>
+<p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519113529754.png" alt="image-20220519113529754"></p>
+<h3 id="2-2-选择编译语言"><a href="#2-2-选择编译语言" class="headerlink" title="2.2 选择编译语言"></a>2.2 选择编译语言</h3><p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519113959652.png" alt="image-20220519113959652"></p>
+<h3 id="2-3-修改将要生成的库文件名字"><a href="#2-3-修改将要生成的库文件名字" class="headerlink" title="2.3 修改将要生成的库文件名字"></a>2.3 修改将要生成的库文件名字</h3><p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519113854258.png" alt="image-20220519113854258"></p>
+<h3 id="2-4-修改为release模式，默认为debug模式"><a href="#2-4-修改为release模式，默认为debug模式" class="headerlink" title="2.4 修改为release模式，默认为debug模式"></a>2.4 修改为release模式，默认为debug模式</h3><p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220519115109182.png" alt="image-20220519115109182"></p>
+<h3 id="2-5-生成库文件"><a href="#2-5-生成库文件" class="headerlink" title="2.5 生成库文件"></a>2.5 生成库文件</h3><p><img src="/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/image-20220526193159867.png" alt="image-20220526193159867"></p>
+<h2 id="3、接口文件"><a href="#3、接口文件" class="headerlink" title="3、接口文件"></a>3、接口文件</h2><p>如果文件为.c后缀名，则可忽略下面操作。如果为C++，则需要添加</p>
+<p>这里是在include头文件的外面包裹了<code>extern &quot;C&quot; &#123; &#125;</code>，是告诉编译器以C语言的命名方式去加载这个符号。还有一种比较常见的方式是在头文件中进行编译声明，如下所示，这样的话，无论C还是C++直接正常<code>include</code>就可以使用了。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">short</span> <span class="title function_">getresult</span><span class="params">(<span class="type">float</span> *sigSeg, <span class="type">short</span> segLen)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiangguoxie.gitee.io/2022/05/19/IAR%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="clgq4ca6l0003w4u19edfe2h7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/26/%E9%87%8D%E6%9E%84%E5%B8%A6%E6%9D%83%E9%87%8D%E7%9A%84%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          重构带权重的深度模型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/10/docker%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker部署服务器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">工程笔记</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 20px;">服务器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">深度学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/MP%E7%AE%97%E6%B3%95%E8%A7%A3%E9%87%8A/">MP算法解释</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">异常值检测算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

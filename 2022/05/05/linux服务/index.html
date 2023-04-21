@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>linux服务 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 服务器关机poweroff 2 linux命令查看 系统是ubuntu还是redhat 1cat &#x2F;etc&#x2F;redhat-release  3 安装g++和gcc 1yum install gcc gcc-c++  2 docker 相关参考：  https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;78295209 使用 docker images命令即可列出已下载的镜像 1# doc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux服务">
+<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/05/linux%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 服务器关机poweroff 2 linux命令查看 系统是ubuntu还是redhat 1cat &#x2F;etc&#x2F;redhat-release  3 安装g++和gcc 1yum install gcc gcc-c++  2 docker 相关参考：  https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;78295209 使用 docker images命令即可列出已下载的镜像 1# doc">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/linux%E6%9C%8D%E5%8A%A1/image-20220505212433086.png">
+<meta property="article:published_time" content="2022-05-05T13:10:16.000Z">
+<meta property="article:modified_time" content="2022-05-26T11:33:41.316Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="服务器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangguoxie.gitee.io/linux%E6%9C%8D%E5%8A%A1/image-20220505212433086.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux服务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/05/linux%E6%9C%8D%E5%8A%A1/" class="article-date">
+  <time datetime="2022-05-05T13:10:16.000Z" itemprop="datePublished">2022-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux服务
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/linux%E6%9C%8D%E5%8A%A1/image-20220505212433086.png" alt="image-20220505212433086"></p>
+<h1 id="1-服务器关机"><a href="#1-服务器关机" class="headerlink" title="1 服务器关机"></a>1 服务器关机</h1><p>poweroff</p>
+<p>2 linux命令查看 系统是ubuntu还是redhat</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure>
+
+<p>3 安装g++和gcc</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc gcc-c++</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-docker-相关"><a href="#2-docker-相关" class="headerlink" title="2 docker 相关"></a>2 docker 相关</h1><p>参考：  <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78295209">https://zhuanlan.zhihu.com/p/78295209</a></p>
+<p>使用 docker images命令即可列出已下载的镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># docker images</span><br></pre></td></tr></table></figure>
+
+<p>使用 docker rmi命令即可删除指定镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># docker rmi java</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-通过Docker部署深度学习项目环境"><a href="#3-通过Docker部署深度学习项目环境" class="headerlink" title="3 通过Docker部署深度学习项目环境"></a>3 通过Docker部署深度学习项目环境</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78541520">https://zhuanlan.zhihu.com/p/78541520</a></p>
+<h1 id="4-docker镜像使用实例"><a href="#4-docker镜像使用实例" class="headerlink" title="4  docker镜像使用实例"></a>4  docker镜像使用实例</h1><p>可以参考：<a target="_blank" rel="noopener" href="https://www.daimajiaoliu.com/daima/7b73b288d3b8809/docker">https://www.daimajiaoliu.com/daima/7b73b288d3b8809/docker</a></p>
+<p>前提条件：</p>
+<p>​	文件夹Datmat：Dockerfile</p>
+<p>​	文件夹DockerBase-Official：Dockerfile</p>
+<p>步骤一：首先将需要的.py文件全部放在对应的Dockerfile文件夹里面</p>
+<p>步骤二：开启docker</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<p>步骤三：启动基础docker【DockerBase-Official】，这一步的目的是将通用的环境加载进去</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd DockerBase-Official</span><br><span class="line">docker build -t docker_base-official .</span><br></pre></td></tr></table></figure>
+
+<p>步骤四：根据当前目录的Dockerfile内容构建名为data2mat的镜像，命令中最后的.表示构建的目录路径。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t data2mat .</span><br></pre></td></tr></table></figure>
+
+<p>步骤五： 运行Docker容器的命令是docker run，这条命令的基础是引用的镜像必须已经构建好。</p>
+<p>docker run的逻辑先搜索本地是否有构建过这个镜像，找不到时会从远端服务器中的仓库拉取最新镜像回来。</p>
+<p>运行docker</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">使用3个cpu运行</span><br><span class="line">docker run --cpus 3 -v /etc/localtime:/etc/localtime -v /home/Docker/logs/log_test_dat2mat:/log -v /home/Docker/matFile:/usr/src/app/matFile -v /temp/ai-ecg/data:/usr/src/app/datFile -v /home/Docker/result:/usr/src/app/result -v /home/Docker/rFile:/usr/src/app/rFile --name v0.0.0.1_main_dat2mat -d v0.0.0.1_main_dat2mat</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line">使用所有的gpu运行，-v 是地址映射，将本机地址映射到docker地址内，冒号：前后分别是本机地址和docker地址</span><br><span class="line">--name 为容器指定名字</span><br><span class="line">--d 在后台运行容器并打印容器 ID</span><br><span class="line">docker run --gpus all -v /etc/localtime:/etc/localtime -v /home/Docker/logs/log_test_dl:/log -v /home/Docker/matFile:/usr/src/app/matFile -v /home/Docker/datFile:/usr/src/app/datFile -v /home/Docker/result:/usr/src/app/result -v /home/Docker/result_dl1:/usr/src/app/result_dl1 -v /home/Docker/result_dl2:/usr/src/app/result_dl2 -v /home/Docker/rFile:/usr/src/app/rFile --name v0.0.0.1_main_dl -d v0.0.0.1_main_dl</span><br></pre></td></tr></table></figure>
+
+<p>其他操作：打开docker的环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it docker_base-official bash</span><br></pre></td></tr></table></figure>
+
+<h1 id="5、docker中容器和镜像的区别"><a href="#5、docker中容器和镜像的区别" class="headerlink" title="5、docker中容器和镜像的区别"></a>5、docker中容器和镜像的区别</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40722827/article/details/102827125">https://blog.csdn.net/qq_40722827/article/details/102827125</a></p>
+<h1 id="6、安装aliyun-python-开发包"><a href="#6、安装aliyun-python-开发包" class="headerlink" title="6、安装aliyun python 开发包"></a>6、安装aliyun python 开发包</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip3 install aliyunsdkcore</span><br><span class="line">pip3 install aliyun-python-sdk-core</span><br><span class="line">pip3 install aliyun-python-sdk-ecs</span><br><span class="line">pip3 install aliyun-python-sdk</span><br><span class="line">pip3 install aliyun-python-sdk-rds</span><br><span class="line">pip install aliyun-python-sdk-sts</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiangguoxie.gitee.io/2022/05/05/linux%E6%9C%8D%E5%8A%A1/" data-id="clgq4ca6q000cw4u1dcpd8zra" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/05/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/05/Docker%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Docker学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">工程笔记</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 20px;">服务器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">深度学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/MP%E7%AE%97%E6%B3%95%E8%A7%A3%E9%87%8A/">MP算法解释</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">异常值检测算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo搭建专属网站 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="0、前言本文主要介绍利用hexo搭建自己的静态博客网站。首先简单介绍hexo安装，然后介绍本地搭建静态网站，最后介绍将网站部署在github。 官网：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F; 1、安装hexo框架1.1、安装Node.js直接到官网上下载安装即可，网址： https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; Node.js 自带npm，npm类似于pytho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建专属网站">
+<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0、前言本文主要介绍利用hexo搭建自己的静态博客网站。首先简单介绍hexo安装，然后介绍本地搭建静态网站，最后介绍将网站部署在github。 官网：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F; 1、安装hexo框架1.1、安装Node.js直接到官网上下载安装即可，网址： https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; Node.js 自带npm，npm类似于pytho">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122203946.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122222010.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122519474.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122638490.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504123301939.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506204238480.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506202608876.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506201337277.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200739817.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200256359.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194433973.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194447702.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527103954165.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527104601665.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527181731884.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182403965.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182515378.png">
+<meta property="article:published_time" content="2022-05-05T09:15:27.000Z">
+<meta property="article:modified_time" content="2022-05-27T10:25:15.432Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="工程笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hexo搭建专属网站" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/" class="article-date">
+  <time datetime="2022-05-05T09:15:27.000Z" itemprop="datePublished">2022-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo搭建专属网站
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="0、前言"><a href="#0、前言" class="headerlink" title="0、前言"></a>0、前言</h1><p>本文主要介绍利用hexo搭建自己的静态博客网站。首先简单介绍hexo安装，然后介绍本地搭建静态网站，最后介绍将网站部署在github。</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<h1 id="1、安装hexo框架"><a href="#1、安装hexo框架" class="headerlink" title="1、安装hexo框架"></a>1、安装hexo框架</h1><h2 id="1-1、安装Node-js"><a href="#1-1、安装Node-js" class="headerlink" title="1.1、安装Node.js"></a>1.1、安装Node.js</h2><p>直接到官网上下载安装即可，网址： <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p>Node.js 自带npm，npm类似于python的pip</p>
+<h2 id="1-2-安装hexo"><a href="#1-2-安装hexo" class="headerlink" title="1.2 安装hexo"></a>1.2 安装hexo</h2><pre><code>npm install -g hexo-cli
+hexo -v  #若安装成功，会出现hexo的版本号
+</code></pre>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png" alt="image-20220504124757898"></p>
+<h1 id="2、搭建本地搭建Hexo"><a href="#2、搭建本地搭建Hexo" class="headerlink" title="2、搭建本地搭建Hexo"></a>2、搭建本地搭建Hexo</h1><h2 id="2-1-基础版-localhost-4000"><a href="#2-1-基础版-localhost-4000" class="headerlink" title="2.1 基础版(localhost:4000)"></a>2.1 基础版(localhost:4000)</h2><p>1）在博客的主目录栏输入cmd，打开命令窗</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122203946.png" alt="image-20220504122203946"></p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122222010.png" alt="image-20220504122222010"></p>
+<p>2）初始化一个网站框架，名字为test</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init test  ## test为指定的博客名字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122519474.png" alt="image-20220504122519474"></p>
+<p>初始化成功后，在指定目录下会出现一系列文件，如下图</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122638490.png" alt="image-20220504122638490"></p>
+<p>3)、部署到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd test ##进入test目录</span><br><span class="line">hexo g	##生成静态页面</span><br><span class="line">hexo s	##在服务器运行</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504123301939.png" alt="image-20220504123301939"></p>
+<p>在浏览器输入该地址即可显示如下图片</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506204238480.png" alt="image-20220506204238480"></p>
+<h2 id="2-2-配置网站"><a href="#2-2-配置网站" class="headerlink" title="2.2 配置网站"></a>2.2 配置网站</h2><h3 id="2-2-1-主题"><a href="#2-2-1-主题" class="headerlink" title="2.2.1 主题"></a>2.2.1 主题</h3><p>1)、进入 <a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">https://hexo.io/themes/index.html</a> 预览主题，选择喜欢的主题下载。下载方法为，点击主题，进入主题的git地址，复制地址，clone。以pure为例，在git里面执行以下命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/cofess/hexo-theme-pure.git themes/pure</span><br></pre></td></tr></table></figure>
+
+<p>2)、将下载的主题的名字，复制到主目录的配置文件_config.yml中</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506202608876.png" alt="image-20220506202608876"></p>
+<h3 id="2-2-2-中文字体"><a href="#2-2-2-中文字体" class="headerlink" title="2.2.2 中文字体"></a>2.2.2 中文字体</h3><p>1、首先进入主题的语言目录，查看主题支持的语言，目录：themes\pure\languages</p>
+<p>2、选择一种语言，填写在主目录的配置文件_config.yml中即可</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506201337277.png" alt="image-20220506201337277"></p>
+<h3 id="2-2-3-创建删除文章"><a href="#2-2-3-创建删除文章" class="headerlink" title="2.2.3 创建删除文章"></a>2.2.3 创建删除文章</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文件名   #创建文件</span><br><span class="line">hexo d -g		 #删除文件，前提是先删除本地文件</span><br><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-4-加载图片"><a href="#2-2-4-加载图片" class="headerlink" title="2.2.4  加载图片"></a>2.2.4  加载图片</h3><p>1)、要添加图片，首先要npm install 一个<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020">hexo</a>-asset-image的依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<p>显示下面的信息，就说明安装成功。安装成功后，node_modules文件夹会存在hexo-asset-image文件夹</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200739817.png" alt="image-20220506200739817"></p>
+<p>2)、然后把_config.yml中的post_asset_folder设为true，这个配置的意思是每次new post一个博客，会增加一个和博客同名的文件夹。同名文件夹里面存储的是对应文件的图片资源</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200256359.png" alt="image-20220506200256359"></p>
+<p>3)、Typora软件完美结合</p>
+<p>进入 文件–&gt;偏好设置–&gt;图像–&gt;复制到指定路径，然后将下面全部勾选上。</p>
+<p>这样，插入的图片路径会映射为Hexo%一串数据。</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194433973.png" alt="image-20220506194433973"></p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194447702.png" alt="image-20220506194447702"></p>
+<p>然后依次执行下面命令 hexo clean，hexo g，hexo s。即可在<a target="_blank" rel="noopener" href="http://localhost:4000/%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E3%80%82">http://localhost:4000/界面显示图片。</a></p>
+<h3 id="2-2-5-添加标签和类别"><a href="#2-2-5-添加标签和类别" class="headerlink" title="2.2.5 添加标签和类别"></a>2.2.5 添加标签和类别</h3><p>1）在hexo根目录的source文件夹下新建一个tags文件夹，然后在\source\tags文件夹里面会出现index.md文件。新建tags文件夹的快捷命令为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+
+<p>默认的index.md文件内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: &quot;tags&quot;</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>2）编辑index.md文件，在文件中添加 layout。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: &quot;tags&quot;</span><br><span class="line">type: tags</span><br><span class="line">layout: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>layout后面的参数对应主题文件夹layout下第一级的布局文件。比如我采用的pure主题，对应的就是layout&#x2F;tags.ejs。如下图所示，如果没有，那么就会出现空白的现象！如果你的tags文件的命名时abc.ejs，那么你就应该写成 layout: “abc”。</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527103954165.png" alt="image-20220527103954165"></p>
+<p>3）新建文件，在文件头的位置写上标签名字，部署之后网页上面就会显示对应的标签,如下图：</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527104601665.png" alt="image-20220527104601665"></p>
+<h2 id="2-3-加入动态特效"><a href="#2-3-加入动态特效" class="headerlink" title="2.3 加入动态特效"></a>2.3 加入动态特效</h2><h3 id="2-3-1-加入跟随鼠标变动的线"><a href="#2-3-1-加入跟随鼠标变动的线" class="headerlink" title="2.3.1 加入跟随鼠标变动的线"></a>2.3.1 加入跟随鼠标变动的线</h3><p>在主题文件夹下layout文件夹中找到layout.ejs，添加下面代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-1-加入雪花飘落的图案"><a href="#2-3-1-加入雪花飘落的图案" class="headerlink" title="2.3.1 加入雪花飘落的图案"></a>2.3.1 加入雪花飘落的图案</h3><p>在\source\js目录下新建txt文件，然后将参考连接中对应的代码复制到txt文件中，再将文件名字和后缀名改成参考文件一致，如特效图一。然后在主题文件夹下layout文件夹中找到layout.ejs，添加下面代码，如特效图二</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;/js/snow2.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527181731884.png" alt="特效图一"></p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182403965.png" alt="特效图二"></p>
+<p>参考连接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/103050877">(77条消息) hexo+yilia添加背景特效_秦时明月之君临天下的博客-CSDN博客</a></p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182515378.png" alt="image-20220527182515378"></p>
+<h1 id="3、部署在git"><a href="#3、部署在git" class="headerlink" title="3、部署在git"></a>3、部署在git</h1><p>1)、首先要有一个git账号，并新建一个仓库。需要注意的是，仓库名字最好为：用户名.github.io表示。例如用户名为test，则仓库名字最好为 test.github.io</p>
+<p>2)、安装 hexo-deployer-git</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>3)、修改配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: https://github.com/test/test.github.io.git</span><br><span class="line">    branch: gh-pages</span><br></pre></td></tr></table></figure>
+
+<p>注意：branch选择 gh-pages。</p>
+<p>4)、部署，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>5、Hexo部署过程中出现错误，可能是因为没有执行hexo clean。</p>
+<p>Error: Spawn failed</p>
+<p>解决办法 一）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/hexo/hanyubolg/   ##进入站点根目录</span><br><span class="line">rm -rf .deploy_git/				   ##删除git提交内容文件夹</span><br><span class="line">git config --global core.autocrlf false ##执行</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d ##最后</span><br></pre></td></tr></table></figure>
+
+<p>解决办法 二）</p>
+<p>重新执行 hexo clean -&gt; hexo g -&gt; hexo d  即可完美解决</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiangguoxie.gitee.io/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/" data-id="clgq4ca6m0004w4u1f48q3i91" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/05/Docker%E6%95%99%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker学习笔记
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">工程笔记</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 20px;">服务器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">深度学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/MP%E7%AE%97%E6%B3%95%E8%A7%A3%E9%87%8A/">MP算法解释</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">异常值检测算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

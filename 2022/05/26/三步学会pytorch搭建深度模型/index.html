@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>三步学会pytorch搭建深度模型 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文从最简单的卷积神经网络开始了解pytorch的框架。以下涉及到的代码完整版请查看git完整代码 基于pytorch的DL主要分为三个模块，数据块，模型块，和训练块。具体如下： 1、   数据集pytorch提供有专门的数据下载，数据处理包，使用这些包可以极大地提高开发效率 1.1 torch.utils.data工具包该包中有两个常用的类，分别为Dataset和DataLoader Datas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三步学会pytorch搭建深度模型">
+<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本文从最简单的卷积神经网络开始了解pytorch的框架。以下涉及到的代码完整版请查看git完整代码 基于pytorch的DL主要分为三个模块，数据块，模型块，和训练块。具体如下： 1、   数据集pytorch提供有专门的数据下载，数据处理包，使用这些包可以极大地提高开发效率 1.1 torch.utils.data工具包该包中有两个常用的类，分别为Dataset和DataLoader Datas">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png">
+<meta property="article:published_time" content="2022-05-26T12:07:19.000Z">
+<meta property="article:modified_time" content="2022-05-26T12:30:52.363Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangguoxie.gitee.io/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-三步学会pytorch搭建深度模型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time datetime="2022-05-26T12:07:19.000Z" itemprop="datePublished">2022-05-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      三步学会pytorch搭建深度模型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文从最简单的卷积神经网络开始了解pytorch的框架。以下涉及到的代码完整版请查看git<a target="_blank" rel="noopener" href="https://github.com/XieHanS/CPSC_ECGHbClassify_demo.git">完整代码</a></p>
+<p>基于pytorch的DL主要分为三个模块，数据块，模型块，和训练块。具体如下：</p>
+<h1 id="1、-数据集"><a href="#1、-数据集" class="headerlink" title="1、   数据集"></a>1、   数据集</h1><p>pytorch提供有专门的数据下载，数据处理包，使用这些包可以极大地提高开发效率</p>
+<h2 id="1-1-torch-utils-data工具包"><a href="#1-1-torch-utils-data工具包" class="headerlink" title="1.1 torch.utils.data工具包"></a>1.1 torch.utils.data工具包</h2><p>该包中有两个常用的类，分别为<strong>Dataset</strong>和<strong>DataLoader</strong></p>
+<p>Dataset 一个抽象类，抽象类只能作为基类派生新类使用，不能创建抽象类对象。其他数据集需要继承这个类，并覆写其中的两个方法:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__getitem__ 和 __len__</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyDataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, data, label</span>):</span><br><span class="line">  	self.data = data</span><br><span class="line">    self.label = label</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, index</span>):</span><br><span class="line">  	<span class="keyword">return</span> (torch.tensor(self.data[index], dtype=torch.<span class="built_in">float</span>), torch.tensor(self.label[index], dtype=torch.long))<span class="comment">#把numpy转换为Tensor</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(self.data)</span><br></pre></td></tr></table></figure>
+
+<p>   调用 _ _ getitem_ _ 只返回一个样本，因此需要一个批量读取的工具，pytorch为我们提供了另外一个类DataLoader。DataLoader 定义一个新的迭代器，实现批量读取，打乱数据并提供并行加速等功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loader = torch.utils.data.DataLoader(</span><br><span class="line">  dataset = datasets,   <span class="comment">#加载的数据集</span></span><br><span class="line">  batch_size = BATCH_SIZE, <span class="comment">#批大小</span></span><br><span class="line">  shuffle = <span class="literal">True</span>,     <span class="comment">#是否将数据打乱，默认为false</span></span><br><span class="line">  num_workers=<span class="number">2</span>,<span class="comment">#使用多进程加载的进程数，0代表不使用多进程</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>使用的时候只需要调用这两个类即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#继承Dataset类，自定义数据集以及对应的标签</span></span><br><span class="line">dataset = MyDataset(X_train, Y_train)</span><br><span class="line">dataset_test = MyDataset(X_test, Y_test)</span><br><span class="line"><span class="comment">#装载数据，实现批量读取</span></span><br><span class="line">dataloader = DataLoader(dataset, batch_size=batch_size)</span><br><span class="line">dataloader_test = DataLoader(dataset_test, batch_size=batch_size, drop_last=<span class="literal">False</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">#训练模型时候的数据循环</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(n_epoch):</span><br><span class="line">    model.train()</span><br><span class="line">    <span class="keyword">for</span> batch_idx, batch <span class="keyword">in</span> <span class="built_in">enumerate</span>(dataloader):  </span><br><span class="line">        input_x, input_y = <span class="built_in">tuple</span>(batch)</span><br><span class="line">        pred = model(input_x)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="2、-定义模型"><a href="#2、-定义模型" class="headerlink" title="2、   定义模型"></a>2、   定义模型</h1><p>pytorch中自定义的模型往往继承自nn.Model，包括两个函数，初始化函数<code>__init__()</code>和forward()。<code>__init__()</code>定义了卷积层和其他层的参数，forward()规定了网络执行的顺序。例如下面的网络：</p>
+<p><code>__init__()</code>定义了两个卷积层conv1和conv2，和一个全连接层out层，两个卷积层里面分别包含了一维卷积，DropOut，ReLU激活和最大池化层。</p>
+<p>forward()定义了执行顺序。首先conv1，接着conv2，最后out层。由于上下层连接的问题，往往init里面会按照顺序撰写，而真正的执行顺序是forward里面的顺序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CNN</span>(nn.Module):</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    <span class="built_in">super</span>(CNN, self).__init__()</span><br><span class="line">    self.conv1 = nn.Sequential( <span class="comment"># input shape (1, 1, 2000)</span></span><br><span class="line">      nn.Conv1d(</span><br><span class="line">        in_channels=<span class="number">1</span>,     <span class="comment"># input height</span></span><br><span class="line">        out_channels=<span class="number">16</span>,    <span class="comment"># n_filters</span></span><br><span class="line">        kernel_size=<span class="number">5</span>,     <span class="comment"># filter size</span></span><br><span class="line">        stride=<span class="number">1</span>,        <span class="comment"># filter movement/step</span></span><br><span class="line">        padding=<span class="number">2</span>,</span><br><span class="line">      ),     <span class="comment"># output shape (16, 1, 2000)</span></span><br><span class="line">      nn.Dropout(<span class="number">0.2</span>),<span class="comment">#扔到0.2</span></span><br><span class="line">      nn.ReLU(),</span><br><span class="line">      nn.MaxPool1d(kernel_size=<span class="number">5</span>),  <span class="comment"># choose max value in 1x5 area, output shape (16, 1, 400)2000/5</span></span><br><span class="line">    )</span><br><span class="line">    self.conv2 = nn.Sequential( <span class="comment"># input shape (16, 1, 400)</span></span><br><span class="line">      nn.Conv1d(<span class="number">16</span>, <span class="number">32</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">2</span>),<span class="comment"># output shape (32, 1, 400)</span></span><br><span class="line">      nn.Dropout(<span class="number">0.2</span>),<span class="comment">#扔掉0.2</span></span><br><span class="line">      nn.ReLU(),</span><br><span class="line">      nn.MaxPool1d(kernel_size=<span class="number">5</span>),<span class="comment"># output shape (32, 1, 400/5=80)</span></span><br><span class="line">    )</span><br><span class="line">    self.out = nn.Linear(<span class="number">32</span> * <span class="number">80</span>, <span class="number">3</span>)  <span class="comment"># fully connected layer, output 3 classes</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">    x = self.conv1(x)</span><br><span class="line">    x = self.conv2(x)</span><br><span class="line">    x = x.view(x.size(<span class="number">0</span>), -<span class="number">1</span>)     </span><br><span class="line">    output = self.out(x)</span><br><span class="line">    <span class="keyword">return</span> output, x </span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.processon.com/diagraming/5f8e903207912906db32acc2">https://www.processon.com/diagraming/5f8e903207912906db32acc2</a></p>
+<p>我们打印出模型如下：</p>
+<p><img src="/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png" alt="image-20220526200852357"></p>
+<h1 id="3、训练模型"><a href="#3、训练模型" class="headerlink" title="3、训练模型"></a>3、训练模型</h1><ul>
+<li><p>1）读数据，装载数据，随机批量分配</p>
+</li>
+<li><p>2）初始化自定义的模型类</p>
+</li>
+<li><p>3）定义优化器【SGD，自适应优化算法(RMSProp，Adam，Adadelta)】和损失函数【MSE(回归),crossEntropy(分类)】</p>
+</li>
+<li><p>4）定义epoch数量，for循环训练模型</p>
+<p># 初始化自定义的模型类</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">model = CNN()  </span><br><span class="line">model.verbose = <span class="literal">False</span><span class="comment">#运行的时候不显示详细信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义优化器和损失函数</span></span><br><span class="line">LR = <span class="number">0.001</span></span><br><span class="line">optimizer = torch.optim.Adam(model.parameters(), lr=LR)  </span><br><span class="line">loss_func = torch.nn.CrossEntropyLoss()     </span><br><span class="line"></span><br><span class="line"><span class="comment">#训练模型</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(n_epoch):</span><br><span class="line">    model.train()</span><br><span class="line">    <span class="keyword">for</span> batch_idx, batch <span class="keyword">in</span> <span class="built_in">enumerate</span>(dataloader):  </span><br><span class="line">      input_x, input_y = <span class="built_in">tuple</span>(batch)</span><br><span class="line">      pred = model(input_x)[<span class="number">0</span>]</span><br><span class="line">      loss = loss_func(pred, input_y)</span><br><span class="line">      optimizer.zero_grad()<span class="comment">#梯度置零</span></span><br><span class="line">      loss.backward()</span><br><span class="line">    <span class="comment">#optimizer.step()是大多数optimizer所支持的简化版本。一旦梯度被如backward()之类的函数计算好后，就可以调用这个函数更新所有的参数。</span></span><br><span class="line">      optimizer.step()</span><br><span class="line">      step += <span class="number">1</span></span><br><span class="line">	<span class="comment"># test</span></span><br><span class="line">	model.<span class="built_in">eval</span>()<span class="comment">#为了固定BN和dropout层,使得偏置参数不随着发生变化</span></span><br></pre></td></tr></table></figure>
+
+<p>训练需要注意的几点：</p>
+<ul>
+<li>1）反向传播之前，优化器的梯度需要置零</li>
+<li>2）optimizer.step()是大多数optimizer所支持的简化版本。一旦梯度被如backward()之类的函数计算好后，就可以调用这个函数更新所有的参数</li>
+<li>3）model.eval()#训练完train_datasets之后,model要用来测试样本，model.eval()为了固定BN和dropout层,使得偏置参数不随着发生变化</li>
+</ul>
+<p>完整的代码<a target="_blank" rel="noopener" href="https://github.com/XieHanS/CPSC_ECGHbClassify_demo.git">https://github.com/XieHanS/CPSC_ECGHbClassify_demo.git</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiangguoxie.gitee.io/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/" data-id="clgq4ca6s000jw4u1bfef0beo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          git常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/26/%E9%87%8D%E6%9E%84%E5%B8%A6%E6%9D%83%E9%87%8D%E7%9A%84%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">重构带权重的深度模型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">工程笔记</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 20px;">服务器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">深度学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/MP%E7%AE%97%E6%B3%95%E8%A7%A3%E9%87%8A/">MP算法解释</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">异常值检测算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>python学习笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="python学习1 安装软件首先要安装python的集成开发环境。conda是跨平台包管理软件，2012年发布，是在数据分析界和Numpy和Scipy一样受欢迎的python工具。conda更多细节可以google。一些conda和anaconda的误解在下面文章可以了解。 http:&#x2F;&#x2F;nooverfit.com&#x2F;wp&#x2F;%E5%85%B3%E4%BA%8Econda%E5%92%8Canacon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python学习笔记">
+<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/05/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="python学习1 安装软件首先要安装python的集成开发环境。conda是跨平台包管理软件，2012年发布，是在数据分析界和Numpy和Scipy一样受欢迎的python工具。conda更多细节可以google。一些conda和anaconda的误解在下面文章可以了解。 http:&#x2F;&#x2F;nooverfit.com&#x2F;wp&#x2F;%E5%85%B3%E4%BA%8Econda%E5%92%8Canacon">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022163019002.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220315191749905.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022172029085.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022171758609.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022180622753.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220811192254768.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220811192440031.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220811192524898.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022181034817.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022190814634.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022191241494.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211130163718905.png">
+<meta property="og:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211124180548982.png">
+<meta property="article:published_time" content="2022-05-05T13:44:56.000Z">
+<meta property="article:modified_time" content="2022-08-11T11:26:55.112Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangguoxie.gitee.io/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022163019002.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/05/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2022-05-05T13:44:56.000Z" itemprop="datePublished">2022-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python学习"><a href="#python学习" class="headerlink" title="python学习"></a>python学习</h1><h1 id="1-安装软件"><a href="#1-安装软件" class="headerlink" title="1 安装软件"></a>1 安装软件</h1><p>首先要安装python的集成开发环境。conda是跨平台包管理软件，2012年发布，是在数据分析界和Numpy和Scipy一样受欢迎的python工具。conda更多细节可以google。一些conda和anaconda的误解在下面文章可以了解。</p>
+<p><a target="_blank" rel="noopener" href="http://nooverfit.com/wp/%E5%85%B3%E4%BA%8Econda%E5%92%8Canaconda%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84%E4%BA%8B%E5%AE%9E%E5%92%8C%E8%AF%AF%E8%A7%A3-conda%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/">http://nooverfit.com/wp/%E5%85%B3%E4%BA%8Econda%E5%92%8Canaconda%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84%E4%BA%8B%E5%AE%9E%E5%92%8C%E8%AF%AF%E8%A7%A3-conda%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</a></p>
+<h2 id="1-1-win环境下安装anaconda"><a href="#1-1-win环境下安装anaconda" class="headerlink" title="1.1 win环境下安装anaconda"></a>1.1 win环境下安装anaconda</h2><p>安装conda，win环境下可以去官网直接下载并安装</p>
+<p><a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022163019002.png" alt="image-20211022163019002"></p>
+<p>下载完成双击安装，一路确认。安装完成的anaconda包含 jupyter notebook，Spyder</p>
+<h2 id="1-2-linux环境安装anaconda"><a href="#1-2-linux环境安装anaconda" class="headerlink" title="1.2 linux环境安装anaconda"></a>1.2 linux环境安装anaconda</h2><ol>
+<li>通过 wget 下载 anaconda 安装包</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://repo.continuum.io/archive/Anaconda3-2018.12-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>利用 bash 命令安装到 anaconda 文件夹下</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-2018.12-Linux-x86_64.sh -p anaconda/ -u</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>一直按yes，包括添加到环境</p>
+</li>
+<li><p>如果运行conda –version 显示没有此指令的话，需要把 anaconda 添加到变量中去，执行下面三句命令：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>然后将下面语句添加在.&#x2F;bashrc文件中，其中userNm为用户名字，需要修改为自己的用户名</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;export PATH=&quot;/home/userNm/anaconda/bin:$PATH&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>更新配置文件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-Linux环境卸载anaconda"><a href="#1-3-Linux环境卸载anaconda" class="headerlink" title="1.3 Linux环境卸载anaconda"></a>1.3 Linux环境卸载anaconda</h2><p>1）删除整个anaconda目录：<br>  由于Anaconda的安装文件都包含在一个目录中，所以直接将该目录删除即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf anaconda</span><br></pre></td></tr></table></figure>
+
+<p>2）清理.bashrc中的Anaconda路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p> 注释掉之前添加的路径(或直接删除)：   #export PATH&#x3D;&#x2F;home&#x2F;userNm&#x2F;anaconda3&#x2F;bin:$PATH<br> 3）更新配置文件，使其生效</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-python虚拟环境"><a href="#2-python虚拟环境" class="headerlink" title="2 python虚拟环境"></a>2 python虚拟环境</h1><p>linux和win均适配。打开命令窗口，查看已有的虚拟环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-1-创建环境"><a href="#2-1-创建环境" class="headerlink" title="2.1 创建环境"></a>2.1 创建环境</h2><p>env_name 为自定义环境名字，python&#x3D;3.8为自定义的python的版本号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n env_name python=3.8</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-激活环境变量"><a href="#2-2-激活环境变量" class="headerlink" title="2.2 激活环境变量"></a>2.2 激活环境变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate env_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-关闭环境变量"><a href="#2-3-关闭环境变量" class="headerlink" title="2.3 关闭环境变量"></a>2.3 关闭环境变量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-删除虚拟环境"><a href="#2-4-删除虚拟环境" class="headerlink" title="2.4 删除虚拟环境"></a>2.4 删除虚拟环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n env_name --all</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-jupyter-notebook"><a href="#3-jupyter-notebook" class="headerlink" title="3 jupyter notebook"></a>3 jupyter notebook</h1><h2 id="3-1-修改默认路径"><a href="#3-1-修改默认路径" class="headerlink" title="3.1 修改默认路径"></a>3.1 修改默认路径</h2><p>1)、修改配置文件</p>
+<p>打开控制窗，输入下面命令，找到 jupyter_notebook_config.py 的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
+
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220315191749905.png" alt="image-20220315191749905"></p>
+<p>打开  jupyter_notebook_config.py文件，找到  <strong>#c.NotebookApp.notebook_dir &#x3D; ‘’</strong> ，将自己的路径填进去，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.notebook_dir = &#x27;E:\\Proton\\Git\\JupyterML&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>2)、修改属性的目标信息，将最后双引号那一串字母删掉，然后将自己的路径添加在后面</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022172029085.png" alt="image-20211022172029085"></p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022171758609.png" alt="image-20211022171758609"></p>
+<p>3)、修改默认打开方式为 “以管理员方式打开”。属性–&gt;快捷方式–&gt;高级–&gt;用管理员身份运行–&gt;确定</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022180622753.png" alt="image-20211022180622753"></p>
+<h2 id="3-2-添加虚拟环境"><a href="#3-2-添加虚拟环境" class="headerlink" title="3.2 添加虚拟环境"></a>3.2 添加虚拟环境</h2><p>首先输入下面命令，安装 ipykernel</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install --user ipykernel</span><br><span class="line"># 只能用pip，conda 会出错</span><br></pre></td></tr></table></figure>
+
+<p>然后将环境写入notebook的kernel中，其中env_name为环境名字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m ipykernel install --user --name=env_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-移除jupyter-Notebook的内核"><a href="#3-3-移除jupyter-Notebook的内核" class="headerlink" title="3.3 移除jupyter Notebook的内核"></a>3.3 移除jupyter Notebook的内核</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter kernelspec remove env_name</span><br></pre></td></tr></table></figure>
+
+<p>3.4 jupty Notebook 没有对应的包问题</p>
+<p>问题描述如下：</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220811192254768.png" alt="image-20220811192254768"></p>
+<p>解决方案：</p>
+<p>1、首先查看 当前的IDE搜索的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">print(sys.path)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220811192440031.png" alt="image-20220811192440031"></p>
+<p>2、再查看安装的包的路径</p>
+<p>命令可以直接输入 pip install 对应的包名字，找到安装路径</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220811192524898.png" alt="image-20220811192524898"></p>
+<p>3、将路径加入系统路径</p>
+<p>sys.path.append(“E:&#x2F;anaconda3&#x2F;envs&#x2F;tf25&#x2F;lib&#x2F;site-packages”)</p>
+<p>再次导入即可。</p>
+<h1 id="4-克隆环境"><a href="#4-克隆环境" class="headerlink" title="4 克隆环境"></a>4 克隆环境</h1><h2 id="4-1-本地电脑clone"><a href="#4-1-本地电脑clone" class="headerlink" title="4.1 本地电脑clone"></a>4.1 本地电脑clone</h2><p>在本地的conda里已经存在py37的环境，想创建一个和py37相同的新环境，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n copyenv --clone py37</span><br></pre></td></tr></table></figure>
+
+<p>完成之后会出现如下界面</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022181034817.png" alt="image-20211022181034817"></p>
+<h2 id="4-2-A电脑clone到B电脑。"><a href="#4-2-A电脑clone到B电脑。" class="headerlink" title="4.2 A电脑clone到B电脑。"></a>4.2 A电脑clone到B电脑。</h2><p>​	1）首先查看A电脑目标conda环境的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">#或</span><br><span class="line">conda info -e</span><br></pre></td></tr></table></figure>
+
+<p>​	<img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022190814634.png" alt="image-20211022190814634"></p>
+<p>2）然后 把对应环境的文件夹整个copy到B电脑的某个文件夹下面，如”G:\project\lym”，再打开B电脑的命令窗口，输入下面命令。其中，pytorchEnv是B电脑新环境的名字，”G:\project\lym”为从A电脑copy过来的环境。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorchEnv --clone G:\project\lym</span><br></pre></td></tr></table></figure>
+
+<p>有时候需要指定环境的路径，可以使用命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -p E:\Anaconda3\env\QRSArrhyNsvfqModel --clone E:\环境\QRSArrhyNsvfqModel</span><br></pre></td></tr></table></figure>
+
+<p>3）clone完成之后会出现下面界面，整个过程速度非常快。</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211022191241494.png" alt="image-20211022191241494"></p>
+<h2 id="4-3-clone的环境注意事项"><a href="#4-3-clone的环境注意事项" class="headerlink" title="4.3 clone的环境注意事项"></a>4.3 clone的环境注意事项</h2><p>1）jupyter的使用</p>
+<p>首先查看是否安装ipykernel，如果没有，则按照3.2操作。如果有，只需要用下面命令 将环境写入notebook的kernel中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m ipykernel install --user --name=pytorch</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-修改pycharm的运行环境"><a href="#5-修改pycharm的运行环境" class="headerlink" title="5 修改pycharm的运行环境"></a>5 修改pycharm的运行环境</h1><p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211130163718905.png" alt="image-20211130163718905"></p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20211124180548982.png" alt="image-20211124180548982"></p>
+<h1 id="6-后台运行"><a href="#6-后台运行" class="headerlink" title="6 后台运行"></a>6 后台运行</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nohup python3 -u testPy.python &gt;log.txt 2&gt;&amp;1 &amp; </span><br><span class="line">nohup python3 -u trainModel_GPU.py &gt;V5.1trainLog.txt 2&gt;&amp;1 &amp;</span><br><span class="line">jobs -l</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-Python-命令行参数的3种传入方式"><a href="#7-Python-命令行参数的3种传入方式" class="headerlink" title="7 Python 命令行参数的3种传入方式"></a>7 Python 命令行参数的3种传入方式</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://tendcode.com/article/python-shell/">https://tendcode.com/article/python-shell/</a></p>
+<h2 id="7-1-sys-argv-模块"><a href="#7-1-sys-argv-模块" class="headerlink" title="7.1 sys.argv 模块"></a>7.1 sys.argv 模块</h2><p>这个模块是我在工作中最常见的其他人写的 Python 脚本传入命令行参数的方式，也是最简单（粗暴）的方式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Date  : 2021/12/10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_for_sys</span>(<span class="params">year, name, body</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the year is&#x27;</span>, year)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the name is&#x27;</span>, name)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the body is&#x27;</span>, body)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        year, name, body = sys.argv[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">        test_for_sys(year, name, body)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(sys.argv)</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br></pre></td></tr></table></figure>
+
+<p>很好理解，由于 <code>sys.argv</code> 是一个由参数组成的列表，所以如果脚本中需要的参数比你命令行中输入的多，那肯定会报错，因为你输入的参数不够，反过来，如果你输入的参数比函数需要的多，那么无所谓，多的参数因为不会被提取使用，所以不影响脚本运行。</p>
+<p>小结：<code>sys.argv</code> 形式传入参数的方式比较简单，但是也很死板，因为传入的参数是一个有序的列表，所以在命令行中必须按照脚本规定的顺序去输入参数，这种方法比较适合脚本中需要的参数个数很少且参数固定的脚本。</p>
+<h2 id="7-2-argparse-模块"><a href="#7-2-argparse-模块" class="headerlink" title="7.2 argparse 模块"></a>7.2 argparse 模块</h2><p><code>argparse</code> 模块也是 Python 自带的一个命令行参数模块，这个模块才是真的为了命令行参数而生的模块，相较之下 <code>sys.argv</code> 只是碰巧可以用在命令行参数上面而已。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Date  : 2019/2/27</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_for_sys</span>(<span class="params">year, name, body</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the year is&#x27;</span>, year)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the name is&#x27;</span>, name)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;the body is&#x27;</span>, body)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Test for argparse&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--name&#x27;</span>, <span class="string">&#x27;-n&#x27;</span>, <span class="built_in">help</span>=<span class="string">&#x27;name 属性，非必要参数&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--year&#x27;</span>, <span class="string">&#x27;-y&#x27;</span>, <span class="built_in">help</span>=<span class="string">&#x27;year 属性，非必要参数，但是有默认值&#x27;</span>, default=<span class="number">2017</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--body&#x27;</span>, <span class="string">&#x27;-b&#x27;</span>, <span class="built_in">help</span>=<span class="string">&#x27;body 属性，必要参数&#x27;</span>, required=<span class="literal">True</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        test_for_sys(args.year, args.name, args.body)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>argparse</code> 模块的方式也挺简单的，首先需要构建一个参数实例，也就是代码中的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Test for argparse&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这行代码就生成了一个命令行参数的对象，之后就可以给对象添加一些参数属性，最后只需要从属性从提取传入的参数进行使用即可。</p>
+<p>上面的代码添加了3个参数，添加参数的前两个字段很容易理解，<code>--name</code> 和 <code>-n</code> 都可以用来在命令行中使用，都表示了参数 <code>name</code>，这样后面使用 <code>parse_args()</code> 方法获取到所有参数之后，就可以使用 <code>args.name</code> 这种形式来提取对应的参数。</p>
+<p>看一下运行成功的几个命令，首先是不传入 year 参数，而使用默认的参数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">G:\Allcodes\testscripts&gt;python test_cmd.py -n Leijun --body <span class="string">&quot;are you ok?&quot;</span></span><br><span class="line">the year <span class="keyword">is</span> <span class="number">2017</span></span><br><span class="line">the name <span class="keyword">is</span> Leijun</span><br><span class="line">the body <span class="keyword">is</span> are you ok?</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-使用Python语言调用C-的so链接库"><a href="#8-使用Python语言调用C-的so链接库" class="headerlink" title="8 使用Python语言调用C++ 的so链接库"></a>8 使用Python语言调用C++ 的so链接库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">from ctypes import cdll  </span><br><span class="line">cur = cdll.LoadLibrary(&#x27;./libmax.so&#x27;)  </span><br><span class="line">a = cur.max(1, 2)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<h1 id="9-更改pip-x2F-anaconda镜像源，加快python模块安装速度"><a href="#9-更改pip-x2F-anaconda镜像源，加快python模块安装速度" class="headerlink" title="9 更改pip&#x2F;anaconda镜像源，加快python模块安装速度"></a>9 更改pip&#x2F;anaconda镜像源，加快python模块安装速度</h1><p>国内源：<br>新版ubuntu要求使用https源，要注意。<br>清华：<a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>阿里云：<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a target="_blank" rel="noopener" href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>华中科技大学：<a target="_blank" rel="noopener" href="http://pypi.hustunique.com/">http://pypi.hustunique.com/</a><br>山东理工大学：<a target="_blank" rel="noopener" href="http://pypi.sdutlinux.org/">http://pypi.sdutlinux.org/</a><br>豆瓣：<a target="_blank" rel="noopener" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a> </p>
+<h2 id="9-1-WIN环境："><a href="#9-1-WIN环境：" class="headerlink" title="9.1 WIN环境："></a>9.1 WIN环境：</h2><p>进入文件”C:\Users\XHS”中，新建文件夹pip，在pip文件夹中新建文件pip.ini，打开该文件，写入内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 config set global.index-url https://pypi.douban.com/simple/</span><br></pre></td></tr></table></figure>
+
+<p>查看使用的镜像源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 config list</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="9-2-Linux环境："><a href="#9-2-Linux环境：" class="headerlink" title="9.2 Linux环境："></a>9.2 Linux环境：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.pip</span><br><span class="line">cd ~/.pip</span><br><span class="line">vi pip.conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-3-conda环境"><a href="#9-3-conda环境" class="headerlink" title="9.3 conda环境"></a>9.3 conda环境</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda config --<span class="keyword">add</span> channels https:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></span><br><span class="line"></span><br><span class="line">conda config --<span class="keyword">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
+
+<p>此时，目录 C:\Users&lt;你的用户名&gt; 下就会生成配置文件.condarc，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - defaults</span><br></pre></td></tr></table></figure>
+
+<p>删除上述配置文件 .condarc 中的第三行，然后保存，最终版本文件如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br></pre></td></tr></table></figure>
+
+<p>通过命令 conda info 查看当前配置信息</p>
+<h1 id="10-matlab"><a href="#10-matlab" class="headerlink" title="10 matlab"></a>10 matlab</h1><p>matlab调用python的模型</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiangguoxie.gitee.io/2022/05/05/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="clgq4ca6q000ew4u1copp5hik" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/05/pytorch%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          pytorch学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/05/linux%E6%9C%8D%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux服务</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">工程笔记</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 20px;">服务器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">深度学习</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/21/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/MP%E7%AE%97%E6%B3%95%E8%A7%A3%E9%87%8A/">MP算法解释</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%BC%82%E5%B8%B8%E5%80%BC%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95/">异常值检测算法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
