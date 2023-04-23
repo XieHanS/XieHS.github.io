@@ -10,34 +10,34 @@
   <meta name="description" content="0、前言本文主要介绍利用hexo搭建自己的静态博客网站。首先简单介绍hexo安装，然后介绍本地搭建静态网站，最后介绍将网站部署在github。 官网：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F; 1、安装hexo框架1.1、安装Node.js直接到官网上下载安装即可，网址： https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; Node.js 自带npm，npm类似于pytho">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo搭建专属网站">
-<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:url" content="https://xiehans.github.io/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="0、前言本文主要介绍利用hexo搭建自己的静态博客网站。首先简单介绍hexo安装，然后介绍本地搭建静态网站，最后介绍将网站部署在github。 官网：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F; 1、安装hexo框架1.1、安装Node.js直接到官网上下载安装即可，网址： https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; Node.js 自带npm，npm类似于pytho">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122203946.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122222010.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122519474.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122638490.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504123301939.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506204238480.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506202608876.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506201337277.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200739817.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200256359.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194433973.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194447702.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527103954165.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527104601665.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527181731884.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182403965.png">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182515378.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122203946.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122222010.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122519474.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504122638490.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504123301939.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506204238480.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506202608876.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506201337277.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200739817.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506200256359.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194433973.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220506194447702.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527103954165.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527104601665.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527181731884.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182403965.png">
+<meta property="og:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220527182515378.png">
 <meta property="article:published_time" content="2022-05-05T09:15:27.000Z">
 <meta property="article:modified_time" content="2022-05-27T10:25:15.432Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="工程笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jiangguoxie.gitee.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png">
+<meta name="twitter:image" content="https://xiehans.github.io/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/image-20220504124757898.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -80,7 +80,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xiehans.github.io"></form>
       </div>
     </div>
   </div>
@@ -199,7 +199,7 @@ hexo -v  #若安装成功，会出现hexo的版本号
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jiangguoxie.gitee.io/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/" data-id="clgq4o7hu00031cu1c1wk0cco" class="article-share-link">Share</a>
+      <a data-url="https://xiehans.github.io/2022/05/05/Hexo%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/" data-id="clgt0zr2q0003usu11gbv2neq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="tag">工程笔记</a></li></ul>

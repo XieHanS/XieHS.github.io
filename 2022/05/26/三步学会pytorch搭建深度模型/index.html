@@ -10,17 +10,17 @@
   <meta name="description" content="本文从最简单的卷积神经网络开始了解pytorch的框架。以下涉及到的代码完整版请查看git完整代码 基于pytorch的DL主要分为三个模块，数据块，模型块，和训练块。具体如下： 1、   数据集pytorch提供有专门的数据下载，数据处理包，使用这些包可以极大地提高开发效率 1.1 torch.utils.data工具包该包中有两个常用的类，分别为Dataset和DataLoader Datas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三步学会pytorch搭建深度模型">
-<meta property="og:url" content="https://jiangguoxie.gitee.io/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:url" content="https://xiehans.github.io/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本文从最简单的卷积神经网络开始了解pytorch的框架。以下涉及到的代码完整版请查看git完整代码 基于pytorch的DL主要分为三个模块，数据块，模型块，和训练块。具体如下： 1、   数据集pytorch提供有专门的数据下载，数据处理包，使用这些包可以极大地提高开发效率 1.1 torch.utils.data工具包该包中有两个常用的类，分别为Dataset和DataLoader Datas">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jiangguoxie.gitee.io/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png">
+<meta property="og:image" content="https://xiehans.github.io/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png">
 <meta property="article:published_time" content="2022-05-26T12:07:19.000Z">
 <meta property="article:modified_time" content="2022-05-26T12:30:52.363Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jiangguoxie.gitee.io/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png">
+<meta name="twitter:image" content="https://xiehans.github.io/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/image-20220526200852357.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiangguoxie.gitee.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xiehans.github.io"></form>
       </div>
     </div>
   </div>
@@ -138,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jiangguoxie.gitee.io/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/" data-id="clgq4o7i0000l1cu1f09ed22k" class="article-share-link">Share</a>
+      <a data-url="https://xiehans.github.io/2022/05/26/%E4%B8%89%E6%AD%A5%E5%AD%A6%E4%BC%9Apytorch%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%9E%8B/" data-id="clgt0zr37000tusu1ffqc5p2q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
